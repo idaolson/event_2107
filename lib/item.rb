@@ -3,6 +3,6 @@ class Item
 
   def initialize(params)
     @name = params[:name]
-    @price = params[:price]
+    @price = params[:price][1..-1].to_f
   end
 end
