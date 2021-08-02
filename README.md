@@ -12,7 +12,10 @@
 
 ## Iteration 1 - Items & FoodTrucks
 
-The Event will need to keep track of its FoodTrucks and their Items. Each FoodTruck will be able to report its total inventory, stock items, and return the quantity of items. Any item not in stock should return `0` by default.
+The Event will need to keep track of its FoodTrucks and their Items.
+Each FoodTruck will be able to report its total inventory, stock items,
+and return the quantity of items. Any item not in stock should
+return `0` by default.
 
 Use TDD to create a `FoodTruck` class that responds to the following interaction pattern:
 

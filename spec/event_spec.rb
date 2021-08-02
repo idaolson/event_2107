@@ -59,17 +59,17 @@ RSpec.describe Event do
     food_truck1 = FoodTruck.new("Rocky Mountain Pies")
     food_truck2 = FoodTruck.new("Ba-Nom-a-Nom")
     food_truck3 = FoodTruck.new("Palisade Peach Shack")
+    food_truck1.stock(item1, 35)
+    food_truck1.stock(item2, 7)
+    food_truck2.stock(item4, 50)
+    food_truck2.stock(item3, 25)
+    food_truck3.stock(item1, 65)
+    food_truck3.stock(item3, 10)
+    event.add_food_truck(food_truck1)
+    event.add_food_truck(food_truck2)
+    event.add_food_truck(food_truck3)
 
-    xit "returns a total inventory of food sold" do
-      food_truck1.stock(item1, 35)
-      food_truck1.stock(item2, 7)
-      food_truck2.stock(item4, 50)
-      food_truck2.stock(item3, 25)
-      food_truck3.stock(item1, 65)
-      food_truck3.stock(item3, 10)
-      event.add_food_truck(food_truck1)
-      event.add_food_truck(food_truck2)
-      event.add_food_truck(food_truck3)
+    it "returns a total inventory of food sold" do
       result = {
           item1 => {
             quantity: 100,
@@ -91,12 +91,12 @@ RSpec.describe Event do
       expect(event.total_inventory).to eq(result)
     end
 
-    it "returns list of all food items names sorted alphabetically" do
+    xit "returns list of all food items names sorted alphabetically" do
       result = ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"]
       expect(event.sorted_item_list).to eq(result)
     end
 
-    it "returns an array of overstocked items" do
+    xit "returns an array of overstocked items" do
       expect(event.overstocked_items).to eq(item1)
     end
   end
